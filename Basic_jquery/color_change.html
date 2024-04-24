@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Change Example</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+    var colors = ["red", "green", "blue", "orange", "black"]; // Array of colors
+    var currentIndex = 0; // Initialize the index
+
+    $("#changeColorBtn").click(function(){
+        $("#myDiv").css("color", colors[currentIndex]); // Set color from array
+        currentIndex = (currentIndex + 1) % colors.length; // Increment index or reset to 0
+    });
+});
+</script>
+</head>
+<body>
+
+<h1><div id="myDiv">This is a Rainbow-Group</div></h1>
+<button id="changeColorBtn">Change Color</button>
+
+</body>
+</html>
+
