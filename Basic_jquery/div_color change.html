@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Background Color Change</title>
+<style>
+#colorChangeDiv {
+    width: 200px;
+    height: 200px;
+    background-color: #ccc;
+    margin: 50px auto;
+    cursor: pointer; /* Change cursor to pointer when hovering over the div */
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#colorChangeDiv").click(function(){
+        var randomColor = getRandomColor();
+        $(this).css("background-color", randomColor);
+    });
+    
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+});
+</script>
+</head>
+<body>
+
+<div id="colorChangeDiv"></div>
+
+</body>
+</html>
